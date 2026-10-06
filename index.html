@@ -251,11 +251,11 @@
 <section class="hero">
   <div class="wrap">
     <h1><span>Vilho</span><span>Helenius</span></h1>
-    <p class="tagline">I build models that predict, and pace that holds.</p>
+    <p class="tagline">Models that learn. Legs that last.</p>
     <p class="hero-bio">M.Sc. (Tech) in Data Analytics from the University of Turku, specializing in statistical
-      modeling and machine learning. My thesis predicted BMI from gut microbiome data; my mornings are spent
-      chasing a sub&#8209;2:50 marathon, and my evenings checking NHL box scores. I like problems with a number
-      at the end &mdash; a model's accuracy, or a finish&#8209;line clock.</p>
+      modeling and machine learning. My thesis predicted BMI from gut microbiome data. My mornings go to
+      chasing a sub&#8209;2:50 marathon, and my evenings to NHL box scores. I like problems with a number
+      at the end: a model's accuracy, or a finish&#8209;line clock.</p>
     <div class="cta-row">
       <a class="btn primary" href="#projects">See the work</a>
       <a class="btn" href="mailto:vilho.helenius@gmail.com">Email me</a>
@@ -282,17 +282,16 @@
     <div class="section-head"><h2>About</h2></div>
     <div class="about-grid">
       <div>
-        <p><strong>I graduated in May 2026</strong> as a diplomi-insinööri &mdash; the Finnish M.Sc. (Tech) &mdash;
+        <p><strong>I graduated in May 2026</strong> as a diplomi-insinööri, the Finnish M.Sc. (Tech),
           in Data Analytics from the University of Turku, minoring in statistics, after a B.Sc. in Information
-          Technology from the same university. Along the way I kept finding the same pattern in every course:
-          I'd rather build the thing than just read about it, so the projects below span from graded
-          coursework to apps I use every day.</p>
-        <p>Outside of models and matrices, I've spent the last several years working the floor at a sports goods
-          store, which turned into an unplanned second education in what actually makes someone come
-          back and buy their next pair of shoes. That's also where the sports-analytics interest comes from:
-          I've watched enough gait analyses and split times to want to build tools around them, not just read
-          about them in a paper.</p>
-        <p>Most of what's below is self-directed &mdash; built because I wanted the tool to exist, not because
+          Technology from the same university. In every course I noticed the same thing: I'd rather build
+          the thing than just read about it. So the projects below range from graded coursework to apps I
+          use every day.</p>
+        <p>Outside of models and matrices, I've spent several years working the floor at a sports goods
+          store. It turned into an unplanned second education in what makes someone come back for their next
+          pair of shoes. It's also where my interest in sports analytics comes from: I've watched enough gait
+          analyses and split times to want to build tools around them, not just read about them in a paper.</p>
+        <p>Most of what's below is self-directed. I built it because I wanted the tool to exist, not because
           a syllabus asked for it.</p>
       </div>
       <dl class="facts">
@@ -322,9 +321,10 @@
       <div>
         <h3>Morning Hockey</h3>
         <p>Last night's NHL results, with a focus on the Finnish players: their goals, assists and saves in each
-          game, plus standings, scoring leaders, a Finnish scoring race, playoff bracket and a page for every
-          player and all 32 teams. Open it with your morning coffee and the box scores are already waiting.</p>
-        <p>Logging in is deliberately light &mdash; a username is enough &mdash; and saves your favorite teams and
+          game, plus standings, scoring leaders, a Finnish scoring race, the playoff bracket, and a page for
+          every player and all 32 teams. Open it with your morning coffee and the box scores are already
+          waiting.</p>
+        <p>Logging in is deliberately light: a username is enough, and it saves your favorite teams and
           players. A spoiler-hide setting keeps the scores out of sight until you're ready.</p>
         <div class="shots">
           <img src="img/hockey-etusivu-ottelukortti.png" width="1000" height="2168" loading="lazy" alt="Morning Hockey home screen showing a game card with goal timeline">
@@ -348,9 +348,9 @@
         <h3>xGoalBoost &times; TabPFN</h3>
         <p>Can a tabular foundation model predict whether an NHL shot becomes a goal as well as tuned gradient
           boosting? I trained expected-goals models on about 365,000 shot attempts from three seasons of
-          MoneyPuck data and put TabPFN-3.5 head to head with XGBoost and CatBoost &mdash; the same question as my
+          MoneyPuck data and put TabPFN-3.5 up against XGBoost and CatBoost. It's the same question as my
           thesis, on a hockey puck.</p>
-        <p>On equal training data TabPFN came out ahead; with all the data, XGBoost closed the gap and stayed
+        <p>On equal training data TabPFN came out ahead. With all the data, XGBoost closed the gap and stayed
           marginally better.</p>
         <table class="results">
           <caption>Test AUC, trained on 2023&ndash;24, tested on 2025 shots</caption>
@@ -364,7 +364,7 @@
             <tr><td>XGBoost</td><td>~240,000</td><td>0.802</td></tr>
           </tbody>
         </table>
-        <p class="aside">The first model scored 0.84 AUC, better than MoneyPuck's own, which was too good to
+        <p class="aside">My first model scored 0.84 AUC, better than MoneyPuck's own, which was too good to
           trust. The cause was a data leak: penalty-time columns are recorded after the shot, and a power-play
           goal ends the penalty. Removing them brought the score back to a believable 0.80.</p>
         <p class="stack"><b>Built with</b> Python, XGBoost, CatBoost, TabPFN-3.5 (Prior Labs API).</p>
@@ -398,12 +398,12 @@
       </div>
       <div>
         <h3>AI Coach: training dashboard</h3>
-        <p>A manual-log training dashboard for runners, built because every wearable app I tried demanded more
-          discipline logging than it gave back in return. Every morning I log training activity, sleep, and
-          subjective feel, then the app calls the Claude API to turn that log into a plain-language readiness
-          briefing instead of a wall of charts.</p>
-        <p class="aside">No OAuth, no watch sync, on purpose &mdash; the friction of writing it down by hand is
-          part of the point. Lightweight support for cycling, swimming, disc golf, and hiking rides alongside
+        <p>A manual-log training dashboard for runners. I built it because every wearable app I tried asked for
+          more discipline in logging than it gave back. Each morning I log my training, sleep and how I feel,
+          and the app calls the Claude API to turn that log into a plain-language readiness briefing instead
+          of a wall of charts.</p>
+        <p class="aside">No OAuth and no watch sync, on purpose: the friction of writing it down by hand is
+          part of the point. Lightweight support for cycling, swimming, disc golf and hiking rides alongside
           running.</p>
         <p class="stack"><b>Built with</b> Next.js 15, React 19, Prisma 6, SQLite, Recharts, Tailwind CSS, Claude API.</p>
       </div>
@@ -417,10 +417,10 @@
       <div>
         <h3>Shoe Fit Explorer</h3>
         <p>A tool that plots roughly 70 running shoe models on a map of width against midsole softness, so a
-          runner can see where a shoe actually sits before buying it &mdash; built after years of watching spec
+          runner can see where a shoe actually sits before buying it. I built it after years of watching spec
           sheets fail to explain how a shoe feels underfoot. A short questionnaire narrows the field, and a
-          step&#8209;softer / step&#8209;stiffer navigator surfaces neighboring recommendations.</p>
-        <p class="aside">A companion to KinttuScan, the camera-based foot scanner on my CV &mdash; that one
+          step&#8209;softer / step&#8209;stiffer navigator suggests neighboring models.</p>
+        <p class="aside">A companion to KinttuScan, the camera-based foot scanner on my CV. That one
           starts from the foot, this one starts from the shoe data.</p>
         <p class="stack"><b>Built with</b> Vite, React, DuckDB&#8209;wasm. The interface is in Finnish.</p>
         <div class="links">
@@ -437,8 +437,7 @@
       <div>
         <h3>Track &amp; Field Event Notifier</h3>
         <p>A small GitHub Actions job that checks for upcoming televised track and field competitions every day
-          and pushes a notification through the ntfy app, so I know when I have to be home to watch my favorite
-          sporting events.</p>
+          and pushes a notification through the ntfy app, so I know when I need to be home to watch.</p>
         <p class="stack"><b>Built with</b> Python, GitHub Actions, ntfy.</p>
         <div class="links">
           <a href="https://github.com/vilhohelenius/tf-notify-me" target="_blank" rel="noopener">Source on GitHub</a>
@@ -514,7 +513,7 @@
       </div>
       <div>
         <p style="margin-top:0">Thesis: <em>Comparative Evaluation of Machine Learning Models for BMI Prediction from Gut Microbiome
-          Data</em> &mdash; benchmarking TabPFN against tree-based models across dataset sizes and feature
+          Data</em>. It benchmarks TabPFN against tree-based models across dataset sizes and feature
           configurations.</p>
         <div class="repo-links">
           <a href="https://github.com/vilhohelenius/bmi_prediction_from_microbiome_data" target="_blank" rel="noopener">Thesis code</a>
