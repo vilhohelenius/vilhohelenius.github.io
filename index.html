@@ -4,376 +4,231 @@
 <meta charset="UTF-8">
 <title>Vilho Helenius</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Vilho Helenius: data analytics and machine learning, with a soft spot for running and hockey. M.Sc. (Tech) from the University of Turku.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F2EFE5;
-    --bg-raised: #FBF9F2;
-    --bg-inverse: #14201B;
-    --ink: #14201B;
-    --ink-soft: #55604F;
-    --ink-faint: #8B9482;
-    --accent: #2657D1;
-    --accent-ink: #FFFFFF;
-    --accent-soft: #DAE4FA;
-    --accent-2: #1E6B4F;
-    --line: #D6CEB8;
-    --line-strong: #B9B097;
-    --shadow: 0 1px 0 rgba(20,32,27,0.06);
-    --radius: 3px;
+    --ice: #EAF1F5;
+    --paper: #F8FBFC;
+    --ink: #0F2036;
+    --ink-soft: #3F5266;
+    --ink-faint: #6A7C8E;
+    --blue: #2158B5;
+    --red: #D2312B;
+    --line: #C9D6DF;
+    --line-strong: #9FB2C0;
+    --night: #0F2036;
+    --on-night: #EAF1F5;
+    --radius: 6px;
     color-scheme: light;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #10140F;
-      --bg-raised: #1A2018;
-      --bg-inverse: #F2EFE5;
-      --ink: #ECE7D8;
-      --ink-soft: #A9AE9C;
-      --ink-faint: #66705E;
-      --accent: #6E96FF;
-      --accent-ink: #101828;
-      --accent-soft: #1C2A4D;
-      --accent-2: #4FAE85;
-      --line: #2A3126;
-      --line-strong: #3C4536;
-      --shadow: 0 1px 0 rgba(0,0,0,0.4);
+    :root {
+      --ice: #0B1626;
+      --paper: #13233A;
+      --ink: #E7EEF4;
+      --ink-soft: #AEBFCE;
+      --ink-faint: #7E91A4;
+      --blue: #7BA3F0;
+      --red: #F0605A;
+      --line: #23364D;
+      --line-strong: #3A5069;
+      --night: #07101C;
+      --on-night: #E7EEF4;
       color-scheme: dark;
     }
   }
-  :root[data-theme="dark"] {
-    --bg: #10140F;
-    --bg-raised: #1A2018;
-    --bg-inverse: #F2EFE5;
-    --ink: #ECE7D8;
-    --ink-soft: #A9AE9C;
-    --ink-faint: #66705E;
-    --accent: #6E96FF;
-    --accent-ink: #101828;
-    --accent-soft: #1C2A4D;
-    --accent-2: #4FAE85;
-    --line: #2A3126;
-    --line-strong: #3C4536;
-    --shadow: 0 1px 0 rgba(0,0,0,0.4);
-    color-scheme: dark;
-  }
 
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
   html, body { margin: 0; padding: 0; }
   body {
-    background: var(--bg);
+    background: var(--ice);
     color: var(--ink);
-    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
+    font-stretch: 100%;
+    font-size: 1.0625rem;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  img { max-width: 100%; }
-  [hidden] { display: none !important; }
-  ::selection { background: var(--accent); color: var(--accent-ink); }
+  img { max-width: 100%; display: block; }
+  ::selection { background: var(--red); color: #fff; }
+  a { color: var(--blue); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--red); }
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 2px; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  p { margin: 0 0 1em; text-wrap: pretty; }
+  .num { font-stretch: 75%; font-variant-numeric: tabular-nums; }
 
-  a { color: inherit; }
-  h1, h2, h3 { text-wrap: balance; margin: 0; font-family: 'Big Shoulders Display', 'Arial Narrow', sans-serif; font-weight: 800; letter-spacing: 0.01em; }
-  .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-
-  .wrap { max-width: 900px; margin: 0 auto; padding-inline: 20px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding-inline: 24px; }
 
   /* ---------- Nav ---------- */
   .topbar {
-    position: sticky;
-    top: env(safe-area-inset-top, 0px);
-    z-index: 20;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--ice) 90%, transparent);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
-  .topbar-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .brand {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 800;
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;
-  }
-  .brand .bib { color: var(--accent); }
-  nav.links { display: flex; gap: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
-  nav.links a { text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid transparent; padding-bottom: 2px; }
-  nav.links a:hover, nav.links a:focus-visible { color: var(--accent); border-color: var(--accent); }
-  @media (max-width: 560px) { nav.links { display: none; } }
+  .topbar-inner { max-width: 1040px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { font-weight: 800; font-stretch: 112%; font-size: 1rem; text-decoration: none; color: var(--ink); }
+  nav.links { display: flex; gap: 22px; font-size: 0.95rem; font-weight: 500; font-stretch: 90%; }
+  nav.links a { color: var(--ink-soft); text-decoration: none; }
+  nav.links a:hover { color: var(--red); }
+  @media (max-width: 640px) { nav.links a:nth-child(n+4) { display: none; } nav.links { gap: 16px; } }
 
   /* ---------- Hero ---------- */
-  .hero {
-    position: relative;
-    padding: 56px 0 40px;
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-  }
-  .lanes {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.55;
-  }
-  .lanes svg { width: 100%; height: 100%; display: block; }
-
-  .hero-inner { position: relative; }
+  .hero { padding: 72px 0 64px; border-bottom: 1px solid var(--line); }
   .hero h1 {
-    font-size: clamp(2.6rem, 9vw, 5.4rem);
-    line-height: 0.92;
-    text-transform: uppercase;
-    margin-top: 10px;
+    font-weight: 900;
+    font-stretch: 125%;
+    font-size: clamp(2.7rem, 10.4vw, 6.6rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
   }
-  .hero h1 .first { display: block; color: var(--ink); }
-  .hero h1 .last { display: block; color: var(--accent); }
-  .hero-tagline {
-    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-    max-width: 30ch;
-    margin: 18px 0 0;
-    font-weight: 500;
-  }
-  .hero-bio { max-width: 62ch; margin: 16px 0 0; color: var(--ink-soft); }
-
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .hero h1 span { display: block; }
+  .tagline { font-size: clamp(1.25rem, 2.8vw, 1.7rem); font-weight: 600; font-stretch: 100%; line-height: 1.25; max-width: 24ch; margin: 28px 0 0; }
+  .hero-bio { max-width: 60ch; margin: 18px 0 0; color: var(--ink-soft); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 18px;
-    border-radius: var(--radius);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--line-strong);
+    display: inline-flex; align-items: center;
+    padding: 11px 20px; border-radius: var(--radius);
+    font: inherit; font-weight: 600; font-size: 0.95rem; font-stretch: 100%;
+    text-decoration: none; color: var(--ink);
+    border: 1.5px solid var(--ink);
+    background: transparent;
   }
-  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .btn.primary:hover { filter: brightness(1.06); }
-  .btn.ghost { color: var(--ink); }
-  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
-  .btn.ghost-inverse { color: var(--bg); border-color: color-mix(in srgb, var(--bg) 35%, transparent); }
-  .btn.ghost-inverse:hover { border-color: var(--accent); color: var(--accent); }
+  .btn:hover { background: var(--ink); color: var(--ice); }
+  .btn.primary { background: var(--red); border-color: var(--red); color: #fff; }
+  .btn.primary:hover { background: var(--ink); border-color: var(--ink); color: var(--ice); }
 
-  /* ---------- Scoreboard ---------- */
-  .scoreboard {
-    background: var(--bg-inverse);
-    color: var(--bg);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+  /* Pace sheet */
+  .pace {
+    margin-top: 56px;
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    padding: 22px 24px 24px;
+    box-shadow: 0 1px 0 var(--line);
   }
-  .scoreboard-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .pace-top { display: flex; flex-wrap: wrap; align-items: end; gap: 20px 40px; }
+  .pace-in label { display: block; font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+  .pace-in input {
+    font: inherit; font-weight: 800; font-stretch: 75%; font-size: 2rem; line-height: 1.1;
+    width: 8.5ch; padding: 6px 12px; border-radius: var(--radius);
+    border: 1.5px solid var(--line-strong); background: var(--ice); color: var(--ink);
+    font-variant-numeric: tabular-nums;
   }
-  .stat {
-    padding: 20px 14px;
-    border-left: 1px solid color-mix(in srgb, var(--bg) 18%, transparent);
-  }
-  .stat:first-child { border-left: none; }
-  .stat .num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: clamp(1.1rem, 2.6vw, 1.5rem);
-    font-weight: 600;
-    color: var(--accent);
-  }
-  .stat .label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.64rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: color-mix(in srgb, var(--bg) 65%, transparent);
-    margin-top: 4px;
-  }
-  @media (max-width: 640px) {
-    .scoreboard-inner { grid-template-columns: repeat(2, 1fr); }
-    .stat:nth-child(3) { border-left: none; }
-  }
+  .pace-in input[aria-invalid="true"] { border-color: var(--red); }
+  .pace-out { font-weight: 900; font-stretch: 75%; font-size: clamp(2.6rem, 8vw, 4.4rem); line-height: 1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .pace-out small { font-size: 0.4em; font-weight: 600; font-stretch: 100%; color: var(--ink-faint); letter-spacing: 0; margin-left: 4px; }
+  .pace-hint { margin: 0; font-size: 0.9rem; color: var(--ink-faint); flex-basis: 100%; }
+  .splits { list-style: none; margin: 22px 0 0; padding: 18px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px 10px; }
+  .splits li { display: flex; flex-direction: column; font-variant-numeric: tabular-nums; }
+  .splits .at { font-size: 0.85rem; color: var(--ink-faint); }
+  .splits .t { font-weight: 700; font-stretch: 80%; font-size: 1.25rem; }
+  .splits li.last .t { color: var(--red); }
+  @media (max-width: 560px) { .splits { grid-template-columns: repeat(3, 1fr); } }
 
   /* ---------- Sections ---------- */
-  section.block { padding: 64px 0; border-bottom: 1px solid var(--line); }
-  section.block:last-of-type { border-bottom: none; }
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 30px;
-  }
-  .section-head .idx {
-    font-family: 'IBM Plex Mono', monospace;
-    color: var(--accent);
-    font-size: 0.85rem;
-  }
-  .section-head h2 {
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    text-transform: uppercase;
-  }
-  .section-lede { color: var(--ink-soft); max-width: 62ch; margin: -18px 0 30px; }
+  section.block { padding: 80px 0; border-bottom: 1px solid var(--line); }
+  .section-head { margin-bottom: 40px; }
+  .section-head h2 { font-weight: 900; font-stretch: 118%; font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1; letter-spacing: -0.02em; }
+  .section-lede { color: var(--ink-soft); max-width: 58ch; margin: 14px 0 0; }
 
   /* About */
-  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; }
-  @media (max-width: 680px) { .about-grid { grid-template-columns: 1fr; } }
-  .about-grid p { margin: 0 0 14px; color: var(--ink-soft); }
-  .about-grid p strong { color: var(--ink); font-weight: 600; }
-  .fact-list { list-style: none; margin: 0; padding: 0; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; }
-  .fact-list li { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
-  .fact-list li:first-child { border-top: none; }
-  .fact-list span:first-child { color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; padding-top: 2px; }
-  .fact-list span:last-child { text-align: right; }
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .about-grid p { color: var(--ink-soft); max-width: 62ch; }
+  .about-grid p strong { color: var(--ink); }
+  dl.facts { margin: 0; }
+  dl.facts div { padding: 12px 0; border-top: 1px solid var(--line); }
+  dl.facts div:first-child { border-top: none; padding-top: 0; }
+  dl.facts dt { font-size: 0.88rem; color: var(--ink-faint); }
+  dl.facts dd { margin: 2px 0 0; font-weight: 600; }
 
   /* Projects */
-  .project {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 28px;
-    padding: 28px 0;
-    border-top: 1px solid var(--line);
-  }
-  .project:first-child { border-top: none; padding-top: 0; }
-  @media (max-width: 680px) { .project { grid-template-columns: 1fr; gap: 14px; } }
-  .project-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
-  .tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.66rem;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-  }
-  .project h3 { font-size: 1.5rem; text-transform: none; font-weight: 700; }
-  .project p { color: var(--ink-soft); margin: 8px 0 0; max-width: 56ch; }
-  .project .note { font-size: 0.88rem; color: var(--ink-faint); margin-top: 10px; font-style: italic; }
-  .stack-block { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; }
-  .stack-block .row { display: flex; justify-content: space-between; padding: 7px 0; border-top: 1px dashed var(--line); gap: 8px; }
-  .stack-block .row:first-child { border-top: none; }
-  .stack-block .row span:first-child { color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; padding-top: 2px; }
-  .stack-block .row span:last-child { text-align: right; }
+  .project { display: grid; grid-template-columns: 200px 1fr; gap: 12px 40px; padding: 44px 0; border-top: 1px solid var(--line-strong); }
+  .project:first-of-type { border-top: 2px solid var(--ink); }
+  @media (max-width: 760px) { .project { grid-template-columns: 1fr; padding: 34px 0; } }
+  .project-meta .status { font-weight: 700; font-stretch: 85%; font-size: 1.05rem; }
+  .project-meta .status.live::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--red); margin-right: 8px; vertical-align: 1px; }
+  .project-meta .kind { color: var(--ink-faint); font-size: 0.9rem; margin-top: 2px; }
+  .project h3 { font-weight: 800; font-stretch: 112%; font-size: clamp(1.45rem, 3.4vw, 2rem); line-height: 1.1; letter-spacing: -0.015em; }
+  .project.major h3 { font-size: clamp(1.7rem, 4.2vw, 2.5rem); font-stretch: 120%; font-weight: 900; }
+  .project p { color: var(--ink-soft); max-width: 62ch; margin-top: 14px; margin-bottom: 0; }
+  .project p.aside { font-size: 0.95rem; color: var(--ink-faint); }
+  .project .stack { font-size: 0.92rem; color: var(--ink-faint); margin-top: 14px; }
+  .project .stack b { font-weight: 600; color: var(--ink-soft); }
+  .project .links { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 16px; font-weight: 600; font-size: 0.95rem; }
 
-  .repo-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    text-decoration: none;
-    color: var(--accent);
-    border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
-    white-space: nowrap;
-  }
-  .repo-link:hover, .repo-link:focus-visible { border-color: var(--accent); }
-  .project .repo-link { display: inline-block; margin-top: 12px; }
+  .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 220px)); gap: 16px; margin-top: 28px; }
+  .shots img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line-strong); background: var(--paper); aspect-ratio: 1179 / 2556; object-fit: cover; }
+  @media (max-width: 560px) { .shots { grid-template-columns: repeat(3, 1fr); gap: 10px; } }
 
-  /* Training log */
-  .log-list { border-top: 1px solid var(--line); }
-  .log-row {
-    display: grid;
-    grid-template-columns: 3fr 2fr 1fr;
-    gap: 12px;
-    padding: 13px 0;
-    border-bottom: 1px solid var(--line);
-    align-items: baseline;
-  }
-  @media (max-width: 600px) { .log-row { grid-template-columns: 1fr; gap: 3px; padding: 14px 0; } }
-  .log-row .name { font-weight: 600; }
-  .log-row .name .repo-link { margin-left: 8px; font-size: 0.68rem; }
-  .log-row .method { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-soft); }
-  .log-row .lang { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; color: var(--ink-faint); text-align: right; }
-  @media (max-width: 600px) { .log-row .lang { text-align: left; } }
+  table.results { border-collapse: collapse; margin-top: 26px; width: 100%; max-width: 560px; font-variant-numeric: tabular-nums; font-size: 0.95rem; }
+  table.results caption { text-align: left; font-weight: 700; padding-bottom: 8px; }
+  table.results th, table.results td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  table.results th:first-child, table.results td:first-child { text-align: left; padding-left: 0; }
+  table.results thead th { font-weight: 600; color: var(--ink-faint); border-bottom: 1.5px solid var(--line-strong); font-size: 0.88rem; }
+  table.results tr.win td { font-weight: 800; }
+  table.results tr.win td:nth-child(3) { color: var(--red); }
 
-  /* Experience */
-  .job { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; }
-  @media (max-width: 680px) { .job { grid-template-columns: 1fr; } }
-  .job-meta h3 { font-size: 1.4rem; text-transform: none; }
-  .job-meta .role { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--accent-2); margin-top: 4px; }
-  .job-meta .dates { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--ink-faint); margin-top: 8px; }
-  .job ul { margin: 0; padding-left: 18px; color: var(--ink-soft); }
+  /* Coursework */
+  .log-list { border-top: 2px solid var(--ink); }
+  .log-row { display: grid; grid-template-columns: 1.3fr 1.5fr 0.9fr; gap: 6px 24px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  @media (max-width: 680px) { .log-row { grid-template-columns: 1fr; } }
+  .log-row .name { font-weight: 700; }
+  .log-row .name a { font-weight: 600; font-size: 0.9rem; margin-left: 10px; }
+  .log-row .method { color: var(--ink-soft); }
+  .log-row .lang { color: var(--ink-faint); font-size: 0.92rem; text-align: right; }
+  @media (max-width: 680px) { .log-row .lang { text-align: left; } }
+
+  /* Experience & education */
+  .two-col { display: grid; grid-template-columns: 200px 1fr; gap: 12px 40px; }
+  @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+  .two-col + .two-col { margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--line); }
+  .job-meta h3, .edu h3 { font-weight: 800; font-stretch: 112%; font-size: 1.35rem; line-height: 1.15; }
+  .job-meta .role { color: var(--ink-soft); margin-top: 4px; }
+  .when { color: var(--ink-faint); font-size: 0.92rem; margin-top: 4px; }
+  .job ul { margin: 0; padding-left: 1.1em; color: var(--ink-soft); max-width: 62ch; }
   .job li { margin-bottom: 8px; }
-  .job li .badge {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--accent-2);
-    border: 1px solid color-mix(in srgb, var(--accent-2) 40%, transparent);
-    border-radius: 999px;
-    padding: 1px 7px;
-    margin-left: 6px;
-  }
-
-  /* Education timeline */
-  .timeline { position: relative; padding-left: 26px; }
-  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 1px; background: var(--line-strong); }
-  .tl-item { position: relative; padding-bottom: 34px; }
-  .tl-item:last-child { padding-bottom: 0; }
-  .tl-item::before {
-    content: attr(data-n);
-    position: absolute;
-    left: -26px;
-    top: -2px;
-    width: 17px; height: 17px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .tl-item h3 { font-size: 1.25rem; text-transform: none; }
-  .tl-item .when { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--ink-faint); margin: 3px 0 8px; }
-  .tl-item p { margin: 4px 0 0; color: var(--ink-soft); }
+  .award { display: inline-block; font-weight: 700; font-size: 0.82rem; color: var(--red); border: 1.5px solid var(--red); border-radius: 999px; padding: 0 9px; margin-left: 4px; }
+  .edu p { color: var(--ink-soft); max-width: 62ch; margin: 10px 0 0; }
+  .edu .repo-links { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 10px; font-weight: 600; font-size: 0.95rem; }
 
   /* Skills */
-  .skill-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 680px) { .skill-groups { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 440px) { .skill-groups { grid-template-columns: 1fr; } }
-  .skill-group .eyebrow { margin-bottom: 10px; }
-  .chip-row { display: flex; flex-wrap: wrap; gap: 7px; }
-  .chip {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.76rem;
-    padding: 5px 10px;
-    border: 1px solid var(--line-strong);
-    border-radius: var(--radius);
-  }
+  .skills { display: grid; grid-template-columns: 200px 1fr; gap: 14px 40px; margin: 0; }
+  @media (max-width: 760px) { .skills { grid-template-columns: 1fr; gap: 2px; } .skills dd { margin-bottom: 18px; } }
+  .skills dt { font-weight: 700; font-stretch: 85%; }
+  .skills dd { margin: 0; color: var(--ink-soft); }
 
-  /* Off the clock / footer */
-  .footer {
-    background: var(--bg-inverse);
-    color: var(--bg);
-    padding: 48px 0 calc(38px + env(safe-area-inset-bottom, 0px));
-  }
-  .footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; }
-  @media (max-width: 680px) { .footer .wrap { grid-template-columns: 1fr; gap: 28px; } }
-  .footer h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); text-transform: uppercase; color: var(--bg); }
-  .footer p { color: color-mix(in srgb, var(--bg) 68%, transparent); max-width: 42ch; }
-  .footer .btn.primary { margin-top: 18px; }
-  .off-clock .eyebrow { color: color-mix(in srgb, var(--bg) 55%, transparent); }
-  .off-clock .chip-row { margin-top: 12px; }
-  .off-clock .chip { border-color: color-mix(in srgb, var(--bg) 30%, transparent); color: color-mix(in srgb, var(--bg) 85%, transparent); }
-  .fine-print { margin-top: 34px; padding-top: 18px; border-top: 1px solid color-mix(in srgb, var(--bg) 18%, transparent); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: color-mix(in srgb, var(--bg) 48%, transparent); grid-column: 1 / -1; }
+  /* Footer */
+  .footer { background: var(--night); color: var(--on-night); padding: 72px 0 calc(40px + env(safe-area-inset-bottom, 0px)); }
+  .footer .wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: 44px; }
+  @media (max-width: 760px) { .footer .wrap { grid-template-columns: 1fr; gap: 32px; } }
+  .footer h2 { font-weight: 900; font-stretch: 120%; font-size: clamp(1.9rem, 5.6vw, 3.1rem); line-height: 1; letter-spacing: -0.02em; }
+  .footer p { color: color-mix(in srgb, var(--on-night) 72%, transparent); max-width: 44ch; margin-top: 18px; }
+  .footer a { color: var(--on-night); }
+  .footer a:hover { color: #FF8F89; }
+  .footer .btn { color: var(--on-night); border-color: color-mix(in srgb, var(--on-night) 45%, transparent); }
+  .footer .btn:hover { background: var(--on-night); color: var(--night); border-color: var(--on-night); }
+  .footer .btn.primary { background: var(--red); border-color: var(--red); color: #fff; }
+  .footer .btn.primary:hover { background: #fff; border-color: #fff; color: var(--night); }
+  .off-clock h3 { font-weight: 700; font-stretch: 85%; font-size: 1.05rem; }
+  .off-clock p { margin-top: 8px; }
+  .fine-print { grid-column: 1 / -1; padding-top: 22px; border-top: 1px solid color-mix(in srgb, var(--on-night) 20%, transparent); font-size: 0.88rem; color: color-mix(in srgb, var(--on-night) 55%, transparent); }
 
+  /* One load moment: the splits tick in */
   @media (prefers-reduced-motion: no-preference) {
-    .hero h1 .last { animation: dash-in 0.6s ease-out; }
-    @keyframes dash-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+    .splits li { animation: tick 0.45s cubic-bezier(.2,.7,.2,1) backwards; }
+    .splits li:nth-child(1) { animation-delay: .15s; } .splits li:nth-child(2) { animation-delay: .22s; }
+    .splits li:nth-child(3) { animation-delay: .29s; } .splits li:nth-child(4) { animation-delay: .36s; }
+    .splits li:nth-child(5) { animation-delay: .43s; } .splits li:nth-child(6) { animation-delay: .50s; }
+    .splits li:nth-child(7) { animation-delay: .57s; } .splits li:nth-child(8) { animation-delay: .64s; }
+    .splits li:nth-child(9) { animation-delay: .71s; } .splits li:nth-child(10) { animation-delay: .78s; }
+    @keyframes tick { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
   }
 </style>
 </head>
@@ -381,66 +236,57 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand">Vilho <span class="bib">Helenius</span></div>
-    <nav class="links">
+    <a class="brand" href="#top">Vilho Helenius</a>
+    <nav class="links" aria-label="Main">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#log">Training Log</a>
+      <a href="#coursework">Coursework</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
-      <a href="https://github.com/vilhohelenius" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/vilho-helenius" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
   </div>
 </header>
 
+<main id="top">
 <section class="hero">
-  <div class="lanes" aria-hidden="true">
-    <svg viewBox="0 0 900 420" preserveAspectRatio="none">
-      <line x1="0" y1="70" x2="900" y2="70" stroke="var(--line)" stroke-width="1"/>
-      <line x1="0" y1="150" x2="900" y2="150" stroke="var(--line)" stroke-width="1"/>
-      <line x1="0" y1="230" x2="900" y2="230" stroke="var(--line)" stroke-width="1"/>
-      <line x1="0" y1="310" x2="900" y2="310" stroke="var(--line)" stroke-width="1"/>
-      <line x1="0" y1="390" x2="900" y2="390" stroke="var(--line)" stroke-width="1"/>
-      <line x1="760" y1="0" x2="760" y2="420" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 7" opacity="0.45"/>
-    </svg>
-  </div>
-  <div class="wrap hero-inner">
-    <div class="eyebrow">Data Analytics · Machine Learning · Sports Analytics</div>
-    <h1><span class="first">Vilho</span><span class="last">Helenius</span></h1>
-    <p class="hero-tagline">I build models that predict, and pace that holds.</p>
+  <div class="wrap">
+    <h1><span>Vilho</span><span>Helenius</span></h1>
+    <p class="tagline">I build models that predict, and pace that holds.</p>
     <p class="hero-bio">M.Sc. (Tech) in Data Analytics from the University of Turku, specializing in statistical
       modeling and machine learning. My thesis predicted BMI from gut microbiome data; my mornings are spent
-      chasing a sub&#8209;2:50 marathon. I like problems with a number at the end &mdash; a model's accuracy, or a
-      finish&#8209;line clock.</p>
+      chasing a sub&#8209;2:50 marathon, and my evenings checking NHL box scores. I like problems with a number
+      at the end &mdash; a model's accuracy, or a finish&#8209;line clock.</p>
     <div class="cta-row">
-      <a class="btn primary" href="mailto:vilho.helenius@gmail.com">Email me</a>
-      <a class="btn ghost" href="#projects">See the work</a>
-      <a class="btn ghost" href="https://github.com/vilhohelenius" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/vilho-helenius" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn primary" href="#projects">See the work</a>
+      <a class="btn" href="mailto:vilho.helenius@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/vilhohelenius" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/vilho-helenius" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <div class="pace" role="group" aria-labelledby="pace-title">
+      <div class="pace-top">
+        <div class="pace-in">
+          <label for="finish" id="pace-title">Marathon finish time</label>
+          <input id="finish" class="num" type="text" inputmode="numeric" autocomplete="off" value="2:50:00" aria-describedby="pace-hint" spellcheck="false">
+        </div>
+        <div class="pace-out num" aria-live="polite"><span id="pace">4:02</span><small>per km</small></div>
+        <p class="pace-hint" id="pace-hint">My goal, and the pace it takes. Type your own finish time as h:mm:ss to see yours.</p>
+      </div>
+      <ol class="splits num" id="splits" aria-label="Split times at an even pace"></ol>
     </div>
   </div>
 </section>
 
-<div class="scoreboard">
-  <div class="scoreboard-inner">
-    <div class="stat"><div class="num mono">SUB&#8209;2:50:00</div><div class="label">Marathon PB goal</div></div>
-    <div class="stat"><div class="num mono">TabPFN vs. Trees</div><div class="label">Thesis model shootout</div></div>
-    <div class="stat"><div class="num mono">70</div><div class="label">Running shoes mapped</div></div>
-    <div class="stat"><div class="num mono">3.5 / 5</div><div class="label">Final GPA, M.Sc. (Tech)</div></div>
-  </div>
-</div>
-
 <section class="block" id="about">
   <div class="wrap">
-    <div class="section-head"><span class="idx mono">01</span><h2>About</h2></div>
+    <div class="section-head"><h2>About</h2></div>
     <div class="about-grid">
       <div>
         <p><strong>I graduated in May 2026</strong> as a diplomi-insinööri &mdash; the Finnish M.Sc. (Tech) &mdash;
           in Data Analytics from the University of Turku, minoring in statistics, after a B.Sc. in Information
           Technology from the same university. Along the way I kept finding the same pattern in every course:
           I'd rather build the thing than just read about it, so the projects below span from graded
-          coursework to apps I'm still actively shipping.</p>
+          coursework to apps I use every day.</p>
         <p>Outside of models and matrices, I've spent the last several years working the floor at a sports goods
           store, which turned into an unplanned second education in what actually makes someone come
           back and buy their next pair of shoes. That's also where the sports-analytics interest comes from:
@@ -449,95 +295,170 @@
         <p>Most of what's below is self-directed &mdash; built because I wanted the tool to exist, not because
           a syllabus asked for it.</p>
       </div>
-      <ul class="fact-list">
-        <li><span>Degree</span><span>M.Sc. (Tech), Data Analytics</span></li>
-        <li><span>University</span><span>University of Turku</span></li>
-        <li><span>Graduated</span><span>May 2026</span></li>
-        <li><span>Thesis</span><span>ML for BMI prediction from gut microbiome data</span></li>
-        <li><span>Languages</span><span>Finnish (native), English (fluent)</span></li>
-        <li><span>Tools</span><span>Python, R, SQL, Power BI</span></li>
-        <li><span>Currently</span><span>Building an AI running-coach dashboard</span></li>
-      </ul>
+      <dl class="facts">
+        <div><dt>Degree</dt><dd>M.Sc. (Tech), Data Analytics</dd></div>
+        <div><dt>University</dt><dd>University of Turku, graduated May 2026</dd></div>
+        <div><dt>Thesis</dt><dd>ML for BMI prediction from gut microbiome data</dd></div>
+        <div><dt>Languages</dt><dd>Finnish (native), English (fluent)</dd></div>
+        <div><dt>Tools</dt><dd>Python, R, SQL, Power BI</dd></div>
+        <div><dt>Currently</dt><dd>Building an AI running-coach dashboard</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
 <section class="block" id="projects">
   <div class="wrap">
-    <div class="section-head"><span class="idx mono">02</span><h2>Featured Projects</h2></div>
-    <p class="section-lede">A closer look at what's behind the one-line CV entries, plus two things still in
-      progress.</p>
+    <div class="section-head">
+      <h2>Projects</h2>
+      <p class="section-lede">Newest first. Most of these started as something I wanted for myself.</p>
+    </div>
 
-    <div class="project">
+    <article class="project major">
+      <div class="project-meta">
+        <div class="status live">Live</div>
+        <div class="kind">Web app &middot; October 2026</div>
+      </div>
       <div>
-        <div class="project-head"><span class="tag">In progress</span></div>
-        <h3>AI Coach &mdash; Training Dashboard</h3>
+        <h3>Morning Hockey</h3>
+        <p>Last night's NHL results, with a focus on the Finnish players: their goals, assists and saves in each
+          game, plus standings, scoring leaders, a Finnish scoring race, playoff bracket and a page for every
+          player and all 32 teams. Open it with your morning coffee and the box scores are already waiting.</p>
+        <p>Logging in is deliberately light &mdash; a username is enough &mdash; and saves your favorite teams and
+          players. A spoiler-hide setting keeps the scores out of sight until you're ready.</p>
+        <div class="shots">
+          <img src="img/hockey-etusivu-ottelukortti.png" width="1000" height="2168" loading="lazy" alt="Morning Hockey home screen showing a game card with goal timeline">
+          <img src="img/hockey-suomiporssi.png" width="1000" height="2168" loading="lazy" alt="Morning Hockey Finnish scoring race table">
+          <img src="img/hockey-analytiikka.png" width="1000" height="2168" loading="lazy" alt="Morning Hockey analytics page with line charts of points through the season">
+        </div>
+        <p class="stack"><b>Built with</b> TypeScript, Cloudflare Pages and D1, D3 charts, the public NHL API. The interface is in Finnish.</p>
+        <div class="links">
+          <a href="https://morning-hockey.pages.dev" target="_blank" rel="noopener">Open the app</a>
+          <a href="https://github.com/vilhohelenius/morning-hockey" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project major">
+      <div class="project-meta">
+        <div class="status">Hackathon</div>
+        <div class="kind">Sports analytics &middot; October 2026</div>
+      </div>
+      <div>
+        <h3>xGoalBoost &times; TabPFN</h3>
+        <p>Can a tabular foundation model predict whether an NHL shot becomes a goal as well as tuned gradient
+          boosting? I trained expected-goals models on about 365,000 shot attempts from three seasons of
+          MoneyPuck data and put TabPFN-3.5 head to head with XGBoost and CatBoost &mdash; the same question as my
+          thesis, on a hockey puck.</p>
+        <p>On equal training data TabPFN came out ahead; with all the data, XGBoost closed the gap and stayed
+          marginally better.</p>
+        <table class="results">
+          <caption>Test AUC, trained on 2023&ndash;24, tested on 2025 shots</caption>
+          <thead><tr><th scope="col">Model</th><th scope="col">Training shots</th><th scope="col">AUC</th></tr></thead>
+          <tbody>
+            <tr><td>MoneyPuck's own xG</td><td>&ndash;</td><td>0.782</td></tr>
+            <tr><td>XGBoost</td><td>50,000</td><td>0.789</td></tr>
+            <tr class="win"><td>TabPFN-3.5</td><td>50,000</td><td>0.794</td></tr>
+            <tr><td>XGBoost</td><td>100,000</td><td>0.797</td></tr>
+            <tr class="win"><td>TabPFN-3.5</td><td>100,000</td><td>0.8005</td></tr>
+            <tr><td>XGBoost</td><td>~240,000</td><td>0.802</td></tr>
+          </tbody>
+        </table>
+        <p class="aside">The first model scored 0.84 AUC, better than MoneyPuck's own, which was too good to
+          trust. The cause was a data leak: penalty-time columns are recorded after the shot, and a power-play
+          goal ends the penalty. Removing them brought the score back to a believable 0.80.</p>
+        <p class="stack"><b>Built with</b> Python, XGBoost, CatBoost, TabPFN-3.5 (Prior Labs API).</p>
+        <div class="links">
+          <a href="https://github.com/vilhohelenius/xGoalBoost-tabpfn" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-meta">
+        <div class="status live">Running daily</div>
+        <div class="kind">Automation &middot; October 2026</div>
+      </div>
+      <div>
+        <h3>Saunatonttu</h3>
+        <p>Heating a sauna costs less when electricity is cheap. Every day around noon, this checks the spot
+          price for the evening hours (18&ndash;21 by default) and sends a push notification to my phone if any
+          hour is under 10 cents per kWh. That's the signal to light the stove.</p>
+        <p class="stack"><b>Built with</b> Python, GitHub Actions, ntfy, the free porssisahko.net price API.</p>
+        <div class="links">
+          <a href="https://github.com/vilhohelenius/Saunatonttu" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-meta">
+        <div class="status">In progress</div>
+        <div class="kind">Web app</div>
+      </div>
+      <div>
+        <h3>AI Coach: training dashboard</h3>
         <p>A manual-log training dashboard for runners, built because every wearable app I tried demanded more
           discipline logging than it gave back in return. Every morning I log training activity, sleep, and
           subjective feel, then the app calls the Claude API to turn that log into a plain-language readiness
           briefing instead of a wall of charts.</p>
-        <p class="note">No OAuth, no watch sync, on purpose &mdash; the friction of writing it down by hand is
+        <p class="aside">No OAuth, no watch sync, on purpose &mdash; the friction of writing it down by hand is
           part of the point. Lightweight support for cycling, swimming, disc golf, and hiking rides alongside
           running.</p>
+        <p class="stack"><b>Built with</b> Next.js 15, React 19, Prisma 6, SQLite, Recharts, Tailwind CSS, Claude API.</p>
       </div>
-      <div class="stack-block">
-        <div class="row"><span>Frontend</span><span>Next.js 15 · React 19</span></div>
-        <div class="row"><span>Data</span><span>Prisma 6 · SQLite</span></div>
-        <div class="row"><span>Charts</span><span>Recharts</span></div>
-        <div class="row"><span>Styling</span><span>Tailwind CSS</span></div>
-        <div class="row"><span>Intelligence</span><span>Claude API</span></div>
-      </div>
-    </div>
+    </article>
 
-    <div class="project">
+    <article class="project">
+      <div class="project-meta">
+        <div class="status">Web app</div>
+        <div class="kind">Running shoes</div>
+      </div>
       <div>
-        <div class="project-head"><span class="tag">Web app</span></div>
         <h3>Shoe Fit Explorer</h3>
-        <p>A tool that plots roughly 70 running shoe models on a map of width against
-          midsole softness, so a runner can see where a shoe actually sits before buying it &mdash; built after
-          years of watching spec sheets fail to explain how a shoe feels underfoot. A short intake
-          questionnaire narrows the field, and a step&#8209;softer / step&#8209;stiffer navigator surfaces
-          neighboring recommendations.</p>
-        <p class="note">A companion to KinttuScan, the camera-based foot scanner on my CV &mdash; that one
-          starts from the foot, this one starts from the shoe data.
-          <a class="repo-link" href="https://gitlab.utu.fi/kinttuscan/kinttuscan-prototype-2.0" target="_blank" rel="noopener">KinttuScan repository &rarr;</a></p>
+        <p>A tool that plots roughly 70 running shoe models on a map of width against midsole softness, so a
+          runner can see where a shoe actually sits before buying it &mdash; built after years of watching spec
+          sheets fail to explain how a shoe feels underfoot. A short questionnaire narrows the field, and a
+          step&#8209;softer / step&#8209;stiffer navigator surfaces neighboring recommendations.</p>
+        <p class="aside">A companion to KinttuScan, the camera-based foot scanner on my CV &mdash; that one
+          starts from the foot, this one starts from the shoe data.</p>
+        <p class="stack"><b>Built with</b> Vite, React, DuckDB&#8209;wasm. The interface is in Finnish.</p>
+        <div class="links">
+          <a href="https://gitlab.utu.fi/kinttuscan/kinttuscan-prototype-2.0" target="_blank" rel="noopener">KinttuScan repository</a>
+        </div>
       </div>
-      <div class="stack-block">
-        <div class="row"><span>Build</span><span>Vite · React</span></div>
-        <div class="row"><span>Data engine</span><span>DuckDB&#8209;wasm</span></div>
-        <div class="row"><span>Source</span><span>~70-model shoe CSV</span></div>
-        <div class="row"><span>Language</span><span>Finnish UI</span></div>
-      </div>
-    </div>
+    </article>
 
-    <div class="project">
+    <article class="project">
+      <div class="project-meta">
+        <div class="status live">Running daily</div>
+        <div class="kind">Automation &middot; June 2026</div>
+      </div>
       <div>
-        <div class="project-head"><span class="tag">Automation</span></div>
         <h3>Track &amp; Field Event Notifier</h3>
-        <p>A small GitHub Actions job that checks for upcoming televised track and field competitions every day and
-          pushes a notification through the ntfy app &mdash; built so I'd know when I have to be home to watch my favorite sporting events.</p>
-        <a class="repo-link" href="https://github.com/vilhohelenius/tf-notify-me" target="_blank" rel="noopener">View repository &rarr;</a>
+        <p>A small GitHub Actions job that checks for upcoming televised track and field competitions every day
+          and pushes a notification through the ntfy app, so I know when I have to be home to watch my favorite
+          sporting events.</p>
+        <p class="stack"><b>Built with</b> Python, GitHub Actions, ntfy.</p>
+        <div class="links">
+          <a href="https://github.com/vilhohelenius/tf-notify-me" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
       </div>
-      <div class="stack-block">
-        <div class="row"><span>Runtime</span><span>GitHub Actions</span></div>
-        <div class="row"><span>Language</span><span>Python</span></div>
-        <div class="row"><span>Delivery</span><span>ntfy</span></div>
-        <div class="row"><span>Schedule</span><span>Daily</span></div>
-      </div>
-    </div>
+    </article>
   </div>
 </section>
 
-<section class="block" id="log">
+<section class="block" id="coursework">
   <div class="wrap">
-    <div class="section-head"><span class="idx mono">03</span><h2>Training Log</h2></div>
-    <p class="section-lede">Smaller reps that don't need a full write-up, but are still worth logging &mdash;
-      coursework and side experiments across prediction, classification, and cross-validation methodology.</p>
+    <div class="section-head">
+      <h2>Coursework</h2>
+      <p class="section-lede">Smaller projects that don't need a full write-up, across prediction, classification, and cross-validation methodology.</p>
+    </div>
     <div class="log-list">
       <div class="log-row">
         <div class="name">NHL player statistics prediction</div>
         <div class="method">Regression modeling</div>
-        <div class="lang">Python · pandas</div>
+        <div class="lang">Python, pandas</div>
       </div>
       <div class="log-row">
         <div class="name">Protein&ndash;drug affinity prediction</div>
@@ -550,14 +471,14 @@
         <div class="lang">Python</div>
       </div>
       <div class="log-row">
-        <div class="name">Text classification<a class="repo-link" href="https://github.com/vilhohelenius/ItHLT_project" target="_blank" rel="noopener">code &rarr;</a></div>
+        <div class="name">Text classification<a href="https://github.com/vilhohelenius/ItHLT_project" target="_blank" rel="noopener">Code</a></div>
         <div class="method">IMDB &amp; Rotten Tomatoes review datasets</div>
         <div class="lang">Python</div>
       </div>
       <div class="log-row">
-        <div class="name">Deep learning coursework<a class="repo-link" href="https://github.com/vilhohelenius/idl_project" target="_blank" rel="noopener">code &rarr;</a></div>
-        <div class="method">CIFAR-100 CNN (0.726 acc) &middot; movie review MLP (0.731 acc)</div>
-        <div class="lang">Python · Keras · PyTorch</div>
+        <div class="name">Deep learning coursework<a href="https://github.com/vilhohelenius/idl_project" target="_blank" rel="noopener">Code</a></div>
+        <div class="method">CIFAR-100 CNN (0.726 acc), movie review MLP (0.731 acc)</div>
+        <div class="lang">Python, Keras, PyTorch</div>
       </div>
       <div class="log-row">
         <div class="name">Possum age prediction</div>
@@ -570,41 +491,45 @@
 
 <section class="block" id="experience">
   <div class="wrap">
-    <div class="section-head"><span class="idx mono">04</span><h2>Experience</h2></div>
-    <div class="job">
+    <div class="section-head"><h2>Experience &amp; education</h2></div>
+
+    <div class="two-col job">
       <div class="job-meta">
         <h3>Stadium</h3>
         <div class="role">Salesperson &amp; Shift Supervisor</div>
-        <div class="dates">01/2021 &mdash; Present</div>
+        <div class="when">01/2021 &ndash; present</div>
       </div>
       <ul>
         <li>Delivered customer service that helped push the store's NPS above 80.</li>
         <li>Grew running-shoe sales 5&ndash;10% year over year through the time I've been on the floor.</li>
         <li>Took on part-time shift-supervisor responsibilities alongside regular sales duties.</li>
-        <li>Store named Stadium's Store of the Year, two years running <span class="badge">2025</span><span class="badge">2026</span>.</li>
+        <li>Store named Stadium's Store of the Year two years running <span class="award">2025</span><span class="award">2026</span></li>
       </ul>
     </div>
-  </div>
-</section>
 
-<section class="block" id="education">
-  <div class="wrap">
-    <div class="section-head"><span class="idx mono">05</span><h2>Education</h2></div>
-    <div class="timeline">
-      <div class="tl-item" data-n="01">
-        <h3>B.Sc., Information Technology</h3>
-        <div class="when mono">University of Turku &middot; 06/2024 &middot; Minor: Biomedical Engineering &amp; Health Technology</div>
-        <p>Thesis: <em>Using AI to Predict and Prevent Sports Injuries.</em></p>
-      </div>
-      <div class="tl-item" data-n="02">
+    <div class="two-col edu">
+      <div>
         <h3>M.Sc. (Tech), Data Analytics</h3>
-        <div class="when mono">University of Turku &middot; 05/2026 &middot; Minor: Statistics</div>
-        <p>Thesis: <em>Comparative Evaluation of Machine Learning Models for BMI Prediction from Gut Microbiome
+        <div class="when">University of Turku, 05/2026<br>Minor: Statistics</div>
+      </div>
+      <div>
+        <p style="margin-top:0">Thesis: <em>Comparative Evaluation of Machine Learning Models for BMI Prediction from Gut Microbiome
           Data</em> &mdash; benchmarking TabPFN against tree-based models across dataset sizes and feature
-          configurations.
-          <a class="repo-link" href="https://github.com/vilhohelenius/bmi_prediction_from_microbiome_data" target="_blank" rel="noopener">View repository &rarr;</a>
-          &middot;
-          <a class="repo-link" href="https://urn.fi/URN:NBN:fi-fe2026051847687" target="_blank" rel="noopener">Read full thesis &rarr;</a></p>
+          configurations.</p>
+        <div class="repo-links">
+          <a href="https://github.com/vilhohelenius/bmi_prediction_from_microbiome_data" target="_blank" rel="noopener">Thesis code</a>
+          <a href="https://urn.fi/URN:NBN:fi-fe2026051847687" target="_blank" rel="noopener">Read the thesis</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col edu">
+      <div>
+        <h3>B.Sc., Information Technology</h3>
+        <div class="when">University of Turku, 06/2024<br>Minor: Biomedical Engineering &amp; Health Technology</div>
+      </div>
+      <div>
+        <p style="margin-top:0">Thesis: <em>Using AI to Predict and Prevent Sports Injuries.</em></p>
       </div>
     </div>
   </div>
@@ -612,58 +537,76 @@
 
 <section class="block" id="skills">
   <div class="wrap">
-    <div class="section-head"><span class="idx mono">06</span><h2>Skills</h2></div>
-    <div class="skill-groups">
-      <div class="skill-group">
-        <div class="eyebrow">Languages &amp; tools</div>
-        <div class="chip-row">
-          <span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span>
-          <span class="chip">Power BI</span><span class="chip">Excel</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="eyebrow">Methods</div>
-        <div class="chip-row">
-          <span class="chip">Machine Learning</span><span class="chip">Statistical Modeling</span>
-          <span class="chip">Predictive Modeling</span><span class="chip">Cross-Validation</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="eyebrow">Focus areas</div>
-        <div class="chip-row">
-          <span class="chip">Data Visualization</span><span class="chip">Sports Analytics</span>
-          <span class="chip">Business Analytics</span>
-        </div>
-      </div>
-    </div>
+    <div class="section-head"><h2>Skills</h2></div>
+    <dl class="skills">
+      <dt>Languages and tools</dt><dd>Python, R, SQL, Power BI, Excel</dd>
+      <dt>Methods</dt><dd>Machine learning, statistical modeling, predictive modeling, cross-validation</dd>
+      <dt>Focus areas</dt><dd>Data visualization, sports analytics, business analytics</dd>
+    </dl>
   </div>
 </section>
+</main>
 
 <footer class="footer" id="contact">
   <div class="wrap">
     <div>
-      <div class="eyebrow" style="color:color-mix(in srgb, var(--bg) 60%, transparent);">Get in touch</div>
-      <h2>Let's talk data,<br>or running, or both.</h2>
+      <h2>Let's talk data, or running, or both.</h2>
       <p>Open to roles in data analytics, machine learning, and sports or business analytics. Happy to walk
         through the thesis, the dashboard, or a training plan.</p>
-      <a class="btn primary" href="mailto:vilho.helenius@gmail.com">vilho.helenius@gmail.com</a>
-      <div class="cta-row" style="margin-top:10px;">
-        <a class="btn ghost-inverse" href="https://github.com/vilhohelenius" target="_blank" rel="noopener">GitHub ↗</a>
-        <a class="btn ghost-inverse" href="https://www.linkedin.com/in/vilho-helenius" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:vilho.helenius@gmail.com">vilho.helenius@gmail.com</a>
+        <a class="btn" href="https://github.com/vilhohelenius" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/vilho-helenius" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="off-clock">
-      <div class="eyebrow">Off the clock</div>
-      <div class="chip-row">
-        <span class="chip">Marathon running</span><span class="chip">Cycling</span>
-        <span class="chip">Disc golf</span><span class="chip">Golf</span>
-        <span class="chip">Puzzles</span><span class="chip">Rubik's cube</span>
-      </div>
+      <h3>Off the clock</h3>
+      <p>Marathon running, cycling, disc golf, golf, NHL hockey, puzzles, and the occasional Rubik's cube.</p>
     </div>
-    <div class="fine-print">Vilho Helenius &middot; Turku, Finland &middot; last updated September 2026</div>
+    <div class="fine-print">Vilho Helenius &middot; Turku, Finland &middot; last updated October 2026</div>
   </div>
 </footer>
 
+<script>
+(function () {
+  var input = document.getElementById('finish');
+  var paceEl = document.getElementById('pace');
+  var splitsEl = document.getElementById('splits');
+  var KM = 42.195;
+  var marks = [5, 10, 15, 20, 25, 30, 35, 40, KM];
+  var labels = ['5 km', '10 km', '15 km', '20 km', '25 km', '30 km', '35 km', '40 km', 'Finish'];
 
+  function parse(v) {
+    var m = v.trim().match(/^(\d{1,2}):([0-5]\d)(?::([0-5]\d))?$/);
+    if (!m) return null;
+    var h = +m[1], mi = +m[2], s = m[3] ? +m[3] : 0;
+    var total = h * 3600 + mi * 60 + s;
+    return total >= 7200 && total <= 25200 ? total : null; // 2:00:00 to 7:00:00
+  }
+  function fmt(sec, forceH) {
+    sec = Math.round(sec);
+    var h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = sec % 60;
+    var mm = (h || forceH) && m < 10 ? '0' + m : '' + m;
+    return (h || forceH ? h + ':' + mm : mm) + ':' + (s < 10 ? '0' : '') + s;
+  }
+  function render(total) {
+    var perKm = total / KM;
+    paceEl.textContent = fmt(perKm);
+    var html = '';
+    marks.forEach(function (km, i) {
+      var last = i === marks.length - 1;
+      html += '<li' + (last ? ' class="last"' : '') + '><span class="at">' + labels[i] +
+        '</span><span class="t">' + fmt(perKm * km, true) + '</span></li>';
+    });
+    splitsEl.innerHTML = html;
+  }
+  input.addEventListener('input', function () {
+    var t = parse(input.value);
+    input.setAttribute('aria-invalid', t === null ? 'true' : 'false');
+    if (t !== null) render(t);
+  });
+  render(parse(input.value));
+})();
+</script>
 </body>
 </html>
